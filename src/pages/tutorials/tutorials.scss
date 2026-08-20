@@ -1,3 +1,5 @@
+@use 'components/shared/styles/mixins' as *;
+
 .tutorials-youtube {
     display: flex;
     align-items: center;
@@ -75,5 +77,251 @@
         &:active {
             transform: translateY(0);
         }
+    }
+}
+
+.tutorials-wrap {
+    .tutorials-wrap__group {
+        margin-bottom: 5.2rem;
+    }
+
+    .tutorials-wrap__group__title {
+        margin-bottom: 0;
+    }
+
+    .tutorials-wrap__group__guides {
+        display: flex;
+        gap: 2.4rem;
+        margin-top: 2.4rem;
+        max-width: 80vw;
+        overflow: auto;
+    }
+
+    .tutorials-wrap__group__cards {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        text-align: center;
+    }
+
+    .tutorials-wrap__channel-link {
+        display: block;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .tutorials-wrap--tour {
+        cursor: pointer;
+    }
+
+    .tutorials-wrap__placeholder,
+    .tutorials-wrap__placeholder__tours {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 28rem;
+        margin-bottom: 0.8rem;
+        background-color: var(--checkbox-disabled-grey);
+        background-size: 100% 100%;
+    }
+
+    .tutorials-wrap__placeholder {
+        height: 16rem;
+    }
+
+    .tutorials-wrap__placeholder__tours {
+        width: 21.5rem;
+        height: 13.5rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .tutorials-wrap__placeholder__button-group {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.6rem 3.2rem;
+        border-radius: 1rem;
+        cursor: pointer;
+        background-color: rgb(0 0 0 / 50%);
+    }
+
+    .tutorials-wrap__placeholder__button-group--play {
+        filter: invert(1);
+    }
+
+    .tutorials-wrap__placeholder__description {
+        width: 28rem;
+    }
+}
+
+.tutorials-wrapper {
+    width: 100%;
+    background: var(--general-main-1);
+
+    .dc-tabs__wrapper {
+        padding: 1.6rem 0.8rem;
+    }
+
+    .dc-tabs__wrapper__group {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 22.5rem;
+        padding: 1.6rem 0.8rem;
+    }
+
+    .dc-tabs__wrapper__group .search-icon {
+        position: absolute;
+        z-index: 1;
+        inset-inline-start: 1.8rem;
+    }
+
+    .dc-tabs__wrapper__group__search-input {
+        width: 100%;
+        height: 3.2rem;
+        padding: 0 3.6rem;
+        border: 1px solid var(--border-normal);
+        border-radius: 8px;
+        outline: none;
+        background-color: var(--general-main-1);
+        color: var(--text-general);
+        font-size: 1.4rem;
+    }
+
+    .dc-tabs__wrapper .dc-tabs--top {
+        display: flex;
+    }
+
+    .dc-tabs__wrapper .dc-tabs__list {
+        display: flex;
+        flex-direction: column;
+        width: 22.5rem;
+        padding: 0 0.8rem;
+    }
+
+    .dc-tabs__wrapper .dc-tabs__list--border-bottom li {
+        text-align: start;
+    }
+
+    .dc-tabs__wrapper .dc-tabs__item {
+        width: 100% !important;
+        padding: 0 1.6rem;
+    }
+
+    .dc-tabs__wrapper .dc-tabs__content {
+        width: 100%;
+        max-height: calc(100vh - 20rem);
+        margin: -6.5rem 2.4rem;
+        overflow: auto;
+    }
+}
+
+@include mobile-or-tablet-screen {
+    .tutorials-mobile {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        height: 100%;
+        padding: 1.6rem;
+        overflow: hidden;
+        background-color: var(--general-main-1);
+    }
+
+    .tutorials-mobile__select {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 4rem;
+        margin-bottom: 1.5rem;
+        min-width: 0;
+    }
+
+    .tutorials-mobile__select .dc-select-native {
+        flex: 1;
+        min-width: 0;
+        margin-inline-end: 0.8rem;
+    }
+
+    .tutorials-mobile__select .dc-select-native__display {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .tutorials-mobile__select .search-icon,
+    .tutorials-mobile__select .arrow-left-bold,
+    .tutorials-mobile__select .close-icon {
+        flex-shrink: 0;
+    }
+
+    .tutorials-mobile__guide,
+    .tutorials-mobile__faq,
+    .tutorials-mobile__qs-guide,
+    .tutorials-mobile__search {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        height: calc(100% - 5.5rem);
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .tutorials-mobile__guide .tutorials-wrap,
+    .tutorials-mobile__search .tutorials-wrap {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .tutorials-wrap .tutorials-wrap__group__guides {
+        display: block;
+        max-width: none;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .tutorials-wrap .tutorials-wrap__group__cards {
+        flex-direction: row;
+        width: auto;
+        margin-bottom: 1.6rem;
+        text-align: start;
+    }
+
+    .tutorials-wrap .tutorials-wrap__placeholder,
+    .tutorials-wrap .tutorials-wrap__placeholder__tours {
+        width: 14.8rem;
+        height: 8.7rem;
+        margin-inline-end: 0.8rem;
+    }
+
+    .tutorials-wrap .tutorials-wrap__placeholder__description {
+        width: calc(100% - 14.8rem);
+    }
+
+    .tutorials-wrap .tutorials-wrap__channel-link {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .tutorials-wrap .tutorials-wrap__channel-link .tutorials-wrap__placeholder {
+        flex: 0 0 14.8rem;
+    }
+
+    .tutorials-wrap .tutorials-wrap__channel-link .tutorials-wrap__placeholder__description {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .tutorials-wrapper .dc-tabs__wrapper__group__search-input {
+        height: 4rem;
+        padding-inline-start: 1.3rem;
     }
 }

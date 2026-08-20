@@ -66,7 +66,7 @@ const GuideContent = ({ guide_tab_content, video_tab_content, is_dialog_open }: 
         }
     };
 
-    const has_guide_content = guide_tab_content.length > 0 || video_tab_content.length > 0;
+    const has_guide_content = guide_tab_content.length > 0;
 
     return React.useMemo(
         () =>
@@ -126,7 +126,7 @@ const GuideContent = ({ guide_tab_content, video_tab_content, is_dialog_open }: 
                         </div>
                     )}
 
-                    {video_tab_content && video_tab_content.length > 0 && (
+                    {video_tab_content?.[0]?.src && (
                         <div className='tutorials-wrap__group'>
                             <div className='tutorials-wrap__group__title'>
                                 <Text
@@ -136,51 +136,35 @@ const GuideContent = ({ guide_tab_content, video_tab_content, is_dialog_open }: 
                                     lineHeight='s'
                                     size={isDesktop ? 's' : 'xs'}
                                 >
-                                    <Localize i18n_default_text='Videos on Deriv Bot' />
+                                    <Localize i18n_default_text='Video tutorials' />
                                 </Text>
                             </div>
 
                             <div className='tutorials-wrap__group__guides'>
-                                {video_tab_content?.map(({ content, src, url, id }) => {
-                                    return (
-                                        <div className='tutorials-wrap__group__cards' key={id}>
-                                            <div
-                                                className={classNames('tutorials-wrap__placeholder', {
-                                                    'tutorials-wrap__placeholder--disabled': !url,
-                                                })}
-                                                style={{
-                                                    backgroundImage: `url(${src})`,
-                                                }}
-                                            >
-                                                <div className='tutorials-wrap__placeholder__button-group'>
-                                                    <LegacyPlay1pxIcon
-                                                        className='tutorials-wrap__placeholder__button-group--play'
-                                                        width='42px'
-                                                        height='42px'
-                                                        onClick={() => {
-                                                            showVideoDialog({
-                                                                type: 'url',
-                                                                url,
-                                                            });
-                                                            /* [AI] - Analytics event tracking removed - see migrate-docs/MONITORING_PACKAGES.md for re-implementation guide */
-                                                            /* [/AI] */
-                                                        }}
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div className='tutorials-wrap__placeholder__description'>
-                                                <Text
-                                                    align='left'
-                                                    color='prominent'
-                                                    lineHeight='s'
-                                                    size={isDesktop ? 's' : 'xs'}
-                                                >
-                                                    {content}
-                                                </Text>
-                                            </div>
+                                <a
+                                    className='tutorials-wrap__channel-link'
+                                    href='http://www.youtube.com/@index_navigatorke'
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                >
+                                    <div
+                                        className='tutorials-wrap__placeholder'
+                                        style={{ backgroundImage: `url(${video_tab_content[0].src})` }}
+                                    >
+                                        <div className='tutorials-wrap__placeholder__button-group'>
+                                            <LegacyPlay1pxIcon
+                                                className='tutorials-wrap__placeholder__button-group--play'
+                                                width='42px'
+                                                height='42px'
+                                            />
                                         </div>
-                                    );
-                                })}
+                                    </div>
+                                    <div className='tutorials-wrap__placeholder__description'>
+                                        <Text align='left' color='prominent' lineHeight='s' size={isDesktop ? 's' : 'xs'}>
+                                            <Localize i18n_default_text='Watch Index Navigator tutorials' />
+                                        </Text>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     )}

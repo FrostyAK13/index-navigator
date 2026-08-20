@@ -904,3 +904,79 @@
 @keyframes ai-spin {
     to { transform: rotate(360deg); }
 }
+
+// ─── Bronze-gold theme override ──────────────────────────────────────────────
+
+@keyframes ai-gold-pulse {
+    0%, 100% { box-shadow: 0 4px 14px rgb(0 0 0 / 30%), 0 0 18px rgb(178 122 50 / 35%); }
+    50% { box-shadow: 0 4px 14px rgb(0 0 0 / 30%), 0 0 32px rgb(178 122 50 / 70%), 0 0 54px rgb(212 161 92 / 30%); }
+}
+
+.ai-scanner-trigger {
+    border-color: rgb(178 122 50 / 70%);
+    background: linear-gradient(150deg, #5d3b1c 0%, #25170d 100%);
+    box-shadow: 0 4px 14px rgb(0 0 0 / 30%), 0 0 18px rgb(178 122 50 / 35%);
+    animation: ai-bounce 1.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite, ai-gold-pulse 2.6s ease-in-out infinite;
+
+    &::before { background: linear-gradient(105deg, transparent 35%, rgb(255 248 237 / 22%) 50%, transparent 65%); }
+    &::after { background: linear-gradient(145deg, rgb(212 161 92 / 22%) 0%, transparent 55%); }
+    span { color: #fff8ed; text-shadow: 0 0 8px rgb(212 161 92 / 70%); }
+    &__dot { border-color: #25170d; }
+    &__wave { border-color: rgb(178 122 50 / 85%); box-shadow: 0 0 16px 2px rgb(212 161 92 / 45%); }
+
+    &:hover,
+    &--active {
+        border-color: rgb(244 196 112 / 95%);
+        box-shadow: 0 8px 28px rgb(0 0 0 / 45%), 0 0 30px rgb(178 122 50 / 65%), 0 0 54px rgb(212 161 92 / 30%);
+    }
+}
+
+.ai-scanner-modal {
+    background: linear-gradient(160deg, #3b2614 0%, #1d1209 40%, #2e1c0e 100%);
+    border-color: rgb(178 122 50 / 65%);
+    box-shadow: 0 0 0 1px rgb(212 161 92 / 15%), 0 0 32px rgb(178 122 50 / 25%), 0 24px 64px rgb(0 0 0 / 65%), inset 0 1px 0 rgb(255 248 237 / 10%);
+
+    &__header {
+        background: linear-gradient(135deg, rgb(178 122 50 / 20%) 0%, rgb(212 161 92 / 7%) 100%);
+        border-color: rgb(178 122 50 / 30%);
+
+        h3 { background: linear-gradient(180deg, #fff8ed 0%, #d4a15c 55%, #9a6428 100%); filter: drop-shadow(0 1px 6px rgb(178 122 50 / 45%)); }
+    }
+
+    &__close { border-color: rgb(178 122 50 / 45%); background: rgb(178 122 50 / 12%); color: #d4a15c; &:hover { background: rgb(178 122 50 / 24%); color: #f4c470; border-color: rgb(178 122 50 / 75%); } }
+    &__mode-bar { background: rgb(178 122 50 / 4%); }
+    &__mode-btn {
+        border-color: rgb(178 122 50 / 30%);
+        color: rgb(212 161 92 / 70%);
+        &:hover:not(:disabled) { background: rgb(178 122 50 / 10%); color: #d4a15c; border-color: rgb(178 122 50 / 65%); }
+        &--active,
+        &--evenodd#{&}--active { background: linear-gradient(135deg, #8f5b22 0%, #b27a32 50%, #d4a15c 100%); color: #fff8ed; box-shadow: 0 2px 10px rgb(178 122 50 / 40%); }
+    }
+    &__description { color: rgb(212 161 92 / 70%); background: rgb(178 122 50 / 5%); border-color: rgb(178 122 50 / 18%); strong { color: #d4a15c; } }
+    &__source-badge { border-color: rgb(178 122 50 / 35%); color: rgb(212 161 92 / 85%); background: rgb(178 122 50 / 10%); &--1s { border-color: rgb(178 122 50 / 55%); color: #e5b86d; background: rgb(178 122 50 / 16%); box-shadow: 0 0 8px rgb(178 122 50 / 22%); } }
+    &__best-card { border-color: rgb(178 122 50 / 22%); background: rgb(178 122 50 / 5%); &--active { border-color: rgb(178 122 50 / 60%); background: rgb(178 122 50 / 10%); box-shadow: 0 0 18px rgb(178 122 50 / 14%); } }
+    &__tabs { background: rgb(178 122 50 / 4%); }
+    &__tab { border-color: rgb(178 122 50 / 30%); color: rgb(212 161 92 / 75%); &:hover { border-color: rgb(178 122 50 / 70%); color: #d4a15c; background: rgb(178 122 50 / 12%); } &--active { background: linear-gradient(135deg, #8f5b22 0%, #b27a32 50%, #d4a15c 100%); color: #fff8ed; box-shadow: 0 2px 10px rgb(178 122 50 / 45%); } }
+    &__body { scrollbar-color: rgb(178 122 50 / 40%) transparent; &::-webkit-scrollbar-thumb { background: rgb(178 122 50 / 40%); } }
+    &__strategy-info { h4 { background: linear-gradient(135deg, #fff8ed, #d4a15c); } p { color: rgb(212 161 92 / 75%); } }
+    &__ticks label,
+    &__param label,
+    &__field label { color: rgb(212 161 92 / 70%); }
+    &__ticks input,
+    &__param input { border-color: rgb(178 122 50 / 38%); background: rgb(178 122 50 / 8%); color: #e5b86d; &:focus { border-color: rgb(178 122 50 / 80%); box-shadow: 0 0 0 3px rgb(178 122 50 / 15%); } }
+    &__section-label { color: #d4a15c; border-color: rgb(178 122 50 / 25%); text-shadow: 0 0 10px rgb(178 122 50 / 40%); }
+    &__field span { background: rgb(178 122 50 / 6%); border-color: rgb(178 122 50 / 22%); color: rgb(212 161 92 / 65%); &.ai-scanner-modal__field-value--ai { color: #e5b86d; border-color: rgb(178 122 50 / 65%); background: rgb(178 122 50 / 14%); text-shadow: 0 0 10px rgb(178 122 50 / 45%); } }
+    &__progress { background: rgb(178 122 50 / 12%); &-bar { background: linear-gradient(90deg, #8f5b22, #b27a32, #d4a15c, #f4c470); } }
+    &__status { color: rgb(212 161 92 / 80%); background: rgb(178 122 50 / 7%); border-color: rgb(178 122 50 / 22%); &--scanning, &--done { color: #d4a15c; } }
+    &__result-row { border-color: rgb(178 122 50 / 12%); &:hover, &--selected { background: rgb(178 122 50 / 12%); } }
+    &__result-rank, &__result-pct { color: rgb(212 161 92 / 60%); }
+    &__result-name { color: rgb(212 161 92 / 90%); }
+    &__result-type { color: #d4a15c; background: rgb(178 122 50 / 14%); border-color: rgb(178 122 50 / 28%); }
+    &__btn {
+        &--scan { background: linear-gradient(90deg, #5d3b1c 0%, #8f5b22 20%, #b27a32 45%, #f4c470 55%, #b27a32 70%, #8f5b22 85%, #5d3b1c 100%); color: #fff8ed; box-shadow: 0 2px 14px rgb(178 122 50 / 45%); }
+        &--primary, &--secondary { background: rgb(178 122 50 / 12%); color: #d4a15c; border-color: rgb(178 122 50 / 55%); &:hover:not(:disabled) { background: rgb(178 122 50 / 22%); border-color: rgb(178 122 50 / 80%); } }
+        &--success { background: linear-gradient(135deg, #8f5b22 0%, #b27a32 50%, #d4a15c 100%); color: #fff8ed; box-shadow: 0 2px 12px rgb(178 122 50 / 42%); }
+    }
+}
+
+.ai-scanner-spinner { border-color: rgb(178 122 50 / 22%); border-top-color: #d4a15c; box-shadow: 0 0 6px rgb(178 122 50 / 35%); }

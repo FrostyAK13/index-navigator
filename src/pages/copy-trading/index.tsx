@@ -74,6 +74,12 @@ const IconAlert = () => (
         <line x1='12' y1='16' x2='12.01' y2='16' />
     </svg>
 );
+const IconEye = () => (
+    <svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='1.8'>
+        <path d='M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z' />
+        <circle cx='12' cy='12' r='2.5' />
+    </svg>
+);
 
 // ── helpers ───────────────────────────────────────────────────────────────────
 
@@ -152,6 +158,98 @@ const CopyTrading = observer(() => {
                 : ct.leader_status === 'connecting'
                     ? localize('Connecting your account for copy trading…')
                     : localize('Not connected yet. Connect your account to begin.');
+
+    const [showToken, setShowToken] = React.useState(false);
+
+    return (
+        <div className='ct2 ct2--compact'>
+            <div className='ct2__compact-header'>
+                <div>
+                    <div className='ct2__compact-title-row'>
+                        <h1 className='ct2__compact-title'>{localize('Copy Trading')}</h1>
+                        <span className={`ct2__compact-status ct2__compact-status--${ct.is_running ? 'online' : 'offline'}`}>
+                            <span className='ct2__compact-status-dot' />
+                            {ct.is_running ? localize('Online') : localize('Offline')}
+                        </span>
+                    </div>
+                    <p className='ct2__compact-description'>
+                        {localize('Copy trades from this account to your connected client accounts.')}
+                    </p>
+                </div>
+                <button
+                    className='ct2__compact-start'
+                    onClick={() => void ct.startCopying()}
+                    disabled={!canStart}
+                >
+                    <IconPlay />
+                    {localize('Start')}
+                </button>
+            </div>
+
+            <div className='ct2__compact-divider' />
+
+            <section className='ct2__compact-section'>
+                <h2 className='ct2__compact-label'>{localize('Client API Token')}</h2>
+                <div className='ct2__compact-token-row'>
+                    <div className='ct2__compact-input-wrap'>
+                        <input
+                            className='ct2__compact-input'
+                            type={showToken ? 'text' : 'password'}
+                            placeholder={localize('Paste a token with trading permission')}
+                            value={ct.new_follower_token}
+                            onChange={e => ct.setNewFollowerToken(e.target.value)}
+                            onKeyDown={handleFollowerKeyDown}
+                            disabled={ct.is_running}
+                        />
+                        <button
+                            className='ct2__compact-eye'
+                            type='button'
+                            onClick={() => setShowToken(value => !value)}
+                            aria-label={showToken ? localize('Hide token') : localize('Show token')}
+                        >
+                            <IconEye />
+                        </button>
+                    </div>
+                    <button
+                        className='ct2__compact-add'
+                        onClick={() => ct.addFollower()}
+                        disabled={!ct.new_follower_token || ct.is_running}
+                    >
+                        + {localize('Add')}
+                    </button>
+                </div>
+            </section>
+
+            <div className='ct2__compact-divider' />
+
+            <section className='ct2__compact-section ct2__compact-clients'>
+                <div className='ct2__compact-clients-heading'>
+                    <h2 className='ct2__compact-label'>{localize('Connected Clients')}</h2>
+                    <div className='ct2__compact-counts'>
+                        <span>{connectedFollowers.length}</span>
+                        <span>{ct.followers.length}</span>
+                    </div>
+                </div>
+                {ct.followers.length === 0 ? (
+                    <div className='ct2__compact-empty'>{localize('No clients yet')}</div>
+                ) : (
+                    <div className='ct2__compact-client-list'>
+                        {ct.followers.map(f => (
+                            <div className='ct2__compact-client' key={f.token}>
+                                <span>{f.account?.loginid ?? maskToken(f.token)}</span>
+                                <span>{f.status}</span>
+                                {!ct.is_running && (
+                                    <button type='button' onClick={() => ct.removeFollower(f.token)} aria-label={localize('Remove')}>
+                                        <IconClose />
+                                    </button>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </section>
+        </div>
+    );
 
     return (
         <div className='ct2'>
