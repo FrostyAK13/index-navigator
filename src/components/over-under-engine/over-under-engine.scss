@@ -60,6 +60,22 @@
     max-width: 840px;
     width: 100%;
     margin-inline: auto;
+    background: linear-gradient(145deg, rgb(23 18 13 / 96%), rgb(36 36 36 / 94%) 52%, rgb(29 20 11 / 96%));
+    border: 1px solid rgb(193 196 194 / 22%);
+    border-radius: 1.2rem;
+    box-shadow: 0 0.8rem 2.4rem rgb(0 0 0 / 30%), inset 0 1px 0 rgb(255 255 255 / 10%);
+
+    &__title {
+        color: #9d6c37;
+        text-shadow: 0 0 0.6rem rgb(157 108 55 / 35%);
+    }
+
+    &__header,
+    &__panel,
+    &__card {
+        border-color: rgb(193 196 194 / 24%);
+        background: rgb(48 48 48 / 78%);
+    }
 
     // Keep the engine anchored to the left on laptop/desktop screens instead
     // of centering the fixed-width panel in the tab content.
@@ -1234,6 +1250,11 @@
         &__entry-last    { font-size: 1.05rem; }
 
     }
+}
+
+body.theme--light .oue,
+body.theme--dark .oue {
+    background: linear-gradient(145deg, #17120d 0%, #242424 52%, #1d140b 100%) !important;
 }
 
 // ─── Light theme ──────────────────────────────────────────────────────────────

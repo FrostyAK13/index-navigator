@@ -125,12 +125,12 @@
 
             &__active {
                 background: linear-gradient(135deg, rgb(95 66 33 / 92%), rgb(157 108 55 / 88%));
-                color: #f2b544 !important;
-                text-shadow: 0 0 1rem rgb(242 181 68 / 35%);
+                color: #9d6c37 !important;
+                text-shadow: 0 0 1rem rgb(157 108 55 / 35%);
 
                 svg {
-                    fill: #f2b544;
-                    filter: drop-shadow(0 0 0.6rem rgb(242 181 68 / 65%));
+                    fill: #9d6c37;
+                    filter: drop-shadow(0 0 0.6rem rgb(157 108 55 / 65%));
                 }
             }
 
@@ -243,19 +243,19 @@
                 flex-shrink: 0;
                 min-width: max-content;
                 overflow: visible;
-                color: #7dd3fc;
+                color: #9d6c37;
                 transition: background 0.25s ease, color 0.25s ease;
 
                 svg {
-                    fill: #7dd3fc;
+                    fill: #9d6c37;
                 }
 
                 &:hover {
-                    background: rgb(59 130 246 / 15%);
-                    color: #e0f2fe;
+                    background: rgb(157 108 55 / 22%);
+                    color: #f2b544;
 
                     svg {
-                        fill: #e0f2fe;
+                        fill: #f2b544;
                     }
                 }
 

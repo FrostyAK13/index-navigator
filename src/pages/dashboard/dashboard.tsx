@@ -8,8 +8,6 @@ import { useDevice } from '@deriv-com/ui';
 import OnboardTourHandler from '../tutorials/dbot-tours/onboarding-tour';
 import Announcements from './announcements';
 import Cards from './cards';
-import './feature-showcase.scss';
-import FeatureShowcase from './feature-showcase';
 import InfoPanel from './info-panel';
 
 type TMobileIconGuide = {
@@ -70,7 +68,6 @@ const DashboardComponent = observer(({ handleTabChange }: TMobileIconGuide) => {
                             </Text>
                         </div>
                         <Cards has_dashboard_strategies={has_dashboard_strategies} is_mobile={!isDesktop} />
-                        {isDesktop && <FeatureShowcase />}
                     </div>
                 </div>
             </div>

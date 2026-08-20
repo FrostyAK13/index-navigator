@@ -507,6 +507,47 @@
 .tab__dashboard__table__images--minimized { border-radius: 0.8rem !important; }
 .tab__dashboard__header .subtitle         { display: none !important; }
 
+/* Index_Navigator glass dashboard theme */
+.tab__dashboard__content {
+    background: linear-gradient(145deg, #17120d 0%, #242424 52%, #1d140b 100%) !important;
+    color: #f4f4f2;
+}
+
+.tab__dashboard__header .title {
+    color: #9d6c37 !important;
+    -webkit-text-fill-color: #9d6c37 !important;
+    filter: drop-shadow(0 0 6px rgb(157 108 55 / 35%));
+}
+
+.tab__dashboard__table__images {
+    background: linear-gradient(145deg, rgb(95 66 33 / 72%), rgb(48 48 48 / 88%)) !important;
+    border: 1px solid rgb(193 196 194 / 28%) !important;
+    box-shadow: 0 0.6rem 1.8rem rgb(0 0 0 / 28%), inset 0 1px 0 rgb(255 255 255 / 12%) !important;
+
+    &::before {
+        background: linear-gradient(105deg, transparent 35%, rgb(242 181 68 / 16%) 50%, transparent 65%) !important;
+    }
+
+    &:hover {
+        border-color: rgb(157 108 55 / 80%) !important;
+        box-shadow: 0 0 0 2px rgb(157 108 55 / 18%) inset, 0 0.8rem 2.4rem rgb(0 0 0 / 38%), 0 0 1.6rem rgb(157 108 55 / 32%) !important;
+    }
+
+    svg,
+    &:hover svg {
+        filter: drop-shadow(0 0 0.5rem rgb(157 108 55 / 55%));
+    }
+}
+
+.tab__dashboard__table__block .dc-text {
+    color: #c1c4c2 !important;
+}
+
+.tab__dashboard__table__block:hover .dc-text {
+    color: #9d6c37 !important;
+    text-shadow: 0 0 0.6rem rgb(157 108 55 / 35%);
+}
+
 /* ─────────────────────────────────────────────────────────────
    LIGHT THEME — soft white + cyan/blue
    ───────────────────────────────────────────────────────────── */
@@ -890,4 +931,61 @@ body.theme--dark {
             box-shadow: 0 0 12px rgb(6 182 212 / 20%) !important;
         }
     }
+}
+
+/* Final Index_Navigator dashboard theme overrides */
+.tab__dashboard__content {
+    background: linear-gradient(145deg, #17120d 0%, #242424 52%, #1d140b 100%) !important;
+}
+
+.tab__dashboard__header .title {
+    background: none !important;
+    color: #9d6c37 !important;
+    -webkit-text-fill-color: #9d6c37 !important;
+    filter: drop-shadow(0 0 6px rgb(157 108 55 / 35%)) !important;
+}
+
+.tab__dashboard__table__images {
+    background: linear-gradient(145deg, rgb(95 66 33 / 72%), rgb(48 48 48 / 88%)) !important;
+    border-color: rgb(193 196 194 / 28%) !important;
+    box-shadow: 0 0.6rem 1.8rem rgb(0 0 0 / 28%), inset 0 1px 0 rgb(255 255 255 / 12%) !important;
+
+    &::before {
+        background: linear-gradient(105deg, transparent 35%, rgb(242 181 68 / 16%) 50%, transparent 65%) !important;
+    }
+
+    &:hover {
+        border-color: rgb(157 108 55 / 80%) !important;
+        box-shadow: 0 0 0 2px rgb(157 108 55 / 18%) inset, 0 0.8rem 2.4rem rgb(0 0 0 / 38%), 0 0 1.6rem rgb(157 108 55 / 32%) !important;
+    }
+
+    svg,
+    &:hover svg {
+        filter: drop-shadow(0 0 0.5rem rgb(157 108 55 / 55%));
+    }
+}
+
+.tab__dashboard__table__block .dc-text,
+.tab__dashboard__table__block:hover .dc-text {
+    color: #c1c4c2 !important;
+    text-shadow: none !important;
+}
+
+body.theme--light .tab__dashboard__content,
+body.theme--dark .tab__dashboard__content {
+    background: linear-gradient(145deg, #ffffff 0%, #eef1f2 52%, #dfe3e4 100%) !important;
+}
+
+body.theme--light .tab__dashboard__table__images,
+body.theme--dark .tab__dashboard__table__images {
+    background: linear-gradient(145deg, #ffffff 0%, #e7eaeb 100%) !important;
+    border-color: rgb(95 66 33 / 30%) !important;
+    box-shadow: 0 0.6rem 1.8rem rgb(71 78 82 / 18%), inset 0 1px 0 rgb(255 255 255 / 90%) !important;
+}
+
+body.theme--light .tab__dashboard__table__block .dc-text,
+body.theme--dark .tab__dashboard__table__block .dc-text,
+body.theme--light .tab__dashboard__table__block:hover .dc-text,
+body.theme--dark .tab__dashboard__table__block:hover .dc-text {
+    color: #5f4221 !important;
 }

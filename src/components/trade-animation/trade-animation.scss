@@ -240,14 +240,14 @@
 @keyframes blue-run-pulse {
     0%, 100% {
         box-shadow:
-            0 0 8px 2px rgb(6 182 212 / 50%),
-            0 0 24px 6px rgb(59 130 246 / 25%),
+            0 0 8px 2px rgb(157 108 55 / 50%),
+            0 0 24px 6px rgb(95 66 33 / 25%),
             inset 0 1px 0 rgb(224 242 254 / 30%);
     }
     50% {
         box-shadow:
-            0 0 16px 6px rgb(6 182 212 / 80%),
-            0 0 48px 16px rgb(59 130 246 / 35%),
+            0 0 16px 6px rgb(157 108 55 / 80%),
+            0 0 48px 16px rgb(95 66 33 / 35%),
             inset 0 1px 0 rgb(224 242 254 / 30%);
     }
 }
@@ -261,13 +261,13 @@
     0%, 100% {
         box-shadow:
             0 0 8px 2px rgb(220 80 60 / 50%),
-            0 0 20px 4px rgb(6 182 212 / 20%),
+            0 0 20px 4px rgb(157 108 55 / 20%),
             inset 0 1px 0 rgb(224 242 254 / 20%);
     }
     50% {
         box-shadow:
             0 0 16px 6px rgb(220 80 60 / 70%),
-            0 0 36px 10px rgb(6 182 212 / 28%),
+            0 0 36px 10px rgb(157 108 55 / 28%),
             inset 0 1px 0 rgb(224 242 254 / 20%);
     }
 }
@@ -275,26 +275,24 @@
 .animation__run-button {
     background: linear-gradient(
         90deg,
-        #003060 0%,
-        #0369a1 20%,
-        #06b6d4 45%,
-        #7dd3fc 55%,
-        #06b6d4 70%,
-        #0369a1 85%,
-        #003060 100%
+        #5f4221 0%,
+        #9d6c37 25%,
+        #c1c4c2 50%,
+        #9d6c37 75%,
+        #5f4221 100%
     ) !important;
     background-size: 200% auto !important;
     animation: blue-run-shimmer 2.5s linear infinite, blue-run-pulse 2s ease-in-out infinite !important;
     border: none !important;
     border-radius: 4px 0 0 4px !important;
-    color: #e0f2fe !important;
+    color: #fff8e8 !important;
     font-weight: 800 !important;
-    text-shadow: 0 1px 2px rgb(6 182 212 / 40%);
+    text-shadow: 0 1px 2px rgb(95 66 33 / 50%);
     position: relative;
     overflow: hidden;
 
     /* icon tint */
-    svg path { fill: #e0f2fe !important; }
+    svg path { fill: #fff8e8 !important; }
 
     /* sweep sheen overlay */
     &::after {
@@ -304,7 +302,7 @@
         background: linear-gradient(
             105deg,
             transparent 35%,
-            rgb(224 242 254 / 30%) 50%,
+            rgb(255 248 232 / 30%) 50%,
             transparent 65%
         );
         background-size: 200% 100%;
@@ -315,13 +313,11 @@
     &:hover {
         background: linear-gradient(
             90deg,
-            #004080 0%,
-            #0284c7 20%,
-            #22d3ee 45%,
-            #a5f3fc 55%,
-            #22d3ee 70%,
-            #0284c7 85%,
-            #004080 100%
+            #7a542b 0%,
+            #9d6c37 25%,
+            #f2b544 50%,
+            #9d6c37 75%,
+            #7a542b 100%
         ) !important;
         background-size: 200% auto !important;
         color: #f0f9ff !important;
@@ -333,14 +329,14 @@
     &[disabled] {
         background: linear-gradient(
             90deg,
-            #001428 0%,
-            #002040 50%,
-            #001428 100%
+            #3b2815 0%,
+            #5f4221 50%,
+            #3b2815 100%
         ) !important;
         animation: none !important;
         box-shadow: none !important;
         opacity: 0.5;
-        color: rgb(56 189 248 / 50%) !important;
+        color: rgb(193 196 194 / 55%) !important;
     }
 }
 
@@ -353,7 +349,7 @@
         #c0392b 100%
     ) !important;
     animation: blue-stop-pulse 1.8s ease-in-out infinite !important;
-    border: 1.5px solid rgb(6 182 212 / 40%) !important;
+    border: 1.5px solid rgb(157 108 55 / 55%) !important;
     border-radius: 4px 0 0 4px !important;
     color: #fff !important;
     font-weight: 800 !important;
@@ -369,7 +365,7 @@
         background: linear-gradient(
             105deg,
             transparent 35%,
-            rgb(6 182 212 / 18%) 50%,
+            rgb(157 108 55 / 18%) 50%,
             transparent 65%
         );
         background-size: 200% 100%;

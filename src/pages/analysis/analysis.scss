@@ -71,6 +71,22 @@ $loss-red:     #ef4444;
     overflow-y: auto;
     box-sizing: border-box;
     background: radial-gradient(ellipse 120% 80% at 50% 0%, #1c1400 0%, #0a0801 50%, #040300 100%);
+    background: linear-gradient(145deg, #17120d 0%, #242424 52%, #1d140b 100%);
+    border: 1px solid rgb(193 196 194 / 22%);
+    border-radius: 1.2rem;
+    box-shadow: 0 0.8rem 2.4rem rgb(0 0 0 / 30%), inset 0 1px 0 rgb(255 255 255 / 10%);
+
+    .analysis__tool {
+        border-color: rgb(193 196 194 / 24%);
+        background: rgb(48 48 48 / 78%);
+        box-shadow: 0 0.6rem 1.8rem rgb(0 0 0 / 28%), inset 0 1px 0 rgb(255 255 255 / 8%);
+    }
+
+    .analysis__tool-title,
+    .analysis__stat-value {
+        color: #9d6c37;
+        text-shadow: 0 0 0.6rem rgb(157 108 55 / 30%);
+    }
 
     // ── Page header ───────────────────────────────────────────────────────────
 

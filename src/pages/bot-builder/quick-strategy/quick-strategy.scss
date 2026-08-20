@@ -8,14 +8,14 @@
 @keyframes qs-form-blue-pulse {
     0%, 100% {
         box-shadow:
-            0 0 8px 2px rgb(6 182 212 / 50%),
-            0 0 24px 6px rgb(59 130 246 / 25%),
+            0 0 8px 2px rgb(157 108 55 / 50%),
+            0 0 24px 6px rgb(95 66 33 / 25%),
             inset 0 1px 0 rgb(224 242 254 / 30%);
     }
     50% {
         box-shadow:
-            0 0 16px 6px rgb(6 182 212 / 80%),
-            0 0 48px 16px rgb(59 130 246 / 35%),
+            0 0 16px 6px rgb(157 108 55 / 80%),
+            0 0 48px 16px rgb(95 66 33 / 35%),
             inset 0 1px 0 rgb(224 242 254 / 30%);
     }
 }
@@ -24,24 +24,22 @@
 [data-testid='qs-run-button'] {
     background: linear-gradient(
         90deg,
-        #003060 0%,
-        #0369a1 20%,
-        #06b6d4 45%,
-        #7dd3fc 55%,
-        #06b6d4 70%,
-        #0369a1 85%,
-        #003060 100%
+        #5f4221 0%,
+        #9d6c37 25%,
+        #c1c4c2 50%,
+        #9d6c37 75%,
+        #5f4221 100%
     ) !important;
     background-size: 200% auto !important;
     animation: qs-form-blue-shimmer 2.5s linear infinite, qs-form-blue-pulse 2s ease-in-out infinite !important;
     border: none !important;
-    color: #e0f2fe !important;
+    color: #fff8e8 !important;
     font-weight: 800 !important;
-    text-shadow: 0 1px 2px rgb(6 182 212 / 40%);
+    text-shadow: 0 1px 2px rgb(95 66 33 / 50%);
     position: relative;
     overflow: hidden;
 
-    svg path { fill: #e0f2fe !important; }
+    svg path { fill: #fff8e8 !important; }
 
     &::after {
         content: '';
@@ -50,7 +48,7 @@
         background: linear-gradient(
             105deg,
             transparent 35%,
-            rgb(224 242 254 / 28%) 50%,
+            rgb(255 248 232 / 28%) 50%,
             transparent 65%
         );
         background-size: 200% 100%;
@@ -61,13 +59,11 @@
     &:hover:not(:disabled) {
         background: linear-gradient(
             90deg,
-            #004080 0%,
-            #0284c7 20%,
-            #22d3ee 45%,
-            #a5f3fc 55%,
-            #22d3ee 70%,
-            #0284c7 85%,
-            #004080 100%
+            #7a542b 0%,
+            #9d6c37 25%,
+            #f2b544 50%,
+            #9d6c37 75%,
+            #7a542b 100%
         ) !important;
         background-size: 200% auto !important;
         color: #f0f9ff !important;
@@ -192,7 +188,7 @@
                         }
 
                         &.active {
-                            border-left: 4px solid #06b6d4;
+                            border-left: 4px solid #9d6c37;
                             background-color: var(--general-main-1);
                         }
                     }
