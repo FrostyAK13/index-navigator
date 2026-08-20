@@ -100,7 +100,7 @@ function App() {
                 const authInfo = await handleOAuthCallback(window.location.href, {
                     clientId: process.env.NEXT_PUBLIC_DERIV_APP_ID || '',
                     redirectUri,
-                    scopes: 'trade',
+                    scopes: 'trade application_read',
                 });
 
                 console.log('[OAuth] Token exchange succeeded. Fetching accounts...');
