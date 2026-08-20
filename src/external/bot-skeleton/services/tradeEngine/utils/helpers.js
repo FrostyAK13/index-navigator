@@ -4,7 +4,7 @@ import { config } from '@/external/bot-skeleton/constants';
 import { localize } from '@deriv-com/translations';
 import { observer as globalObserver } from '../../../utils/observer';
 import { error as logError } from './broadcast';
-import { DERIV_APP_MARKUP } from '@/utils/deriv-app-markup';
+import { DERIV_APP_MARKUP_PERCENTAGE } from '@/utils/deriv-app-markup';
 
 export const tradeOptionToProposal = (trade_option, purchase_reference) =>
     trade_option.contractTypes.map(type => {
@@ -72,7 +72,7 @@ export const tradeOptionToBuy = (contract_type, trade_option) => {
     }
     buy.parameters.app_markup_percentage = !isEmptyObject(trade_option.app_markup_percentage)
         ? trade_option.app_markup_percentage
-        : DERIV_APP_MARKUP;
+        : DERIV_APP_MARKUP_PERCENTAGE;
     if (!isEmptyObject(trade_option.barrier_range)) {
         buy.parameters.barrier_range = trade_option.barrier_range;
     }

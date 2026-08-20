@@ -9,7 +9,7 @@
  * account API token and add real-account tokens as followers.
  */
 import DerivAPIBasic from '@deriv/deriv-api/dist/DerivAPIBasic';
-import { DERIV_APP_MARKUP } from '@/utils/deriv-app-markup';
+import { DERIV_APP_MARKUP_PERCENTAGE } from '@/utils/deriv-app-markup';
 
 // ─── types ──────────────────────────────────────────────────────────────────
 
@@ -178,7 +178,7 @@ async function replicateTrade(
     const buyRes: any = await followerApi.send({
         buy: proposal.id,
         price: proposal.ask_price,
-        parameters: { app_markup_percentage: DERIV_APP_MARKUP },
+        parameters: { app_markup_percentage: DERIV_APP_MARKUP_PERCENTAGE },
     });
 
     if (buyRes?.error) throw new Error(buyRes.error.message || 'Buy failed');
