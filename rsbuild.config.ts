@@ -48,6 +48,8 @@ export default defineConfig({
         // Partner app name. The BFF writes this into .env.production at deploy time; the header
         // logo+name mark and the document title read it (with brand.config / default fallback).
         NEXT_PUBLIC_DERIV_APP_NAME: JSON.stringify(process.env.NEXT_PUBLIC_DERIV_APP_NAME ?? ''),
+        // App markup applied to digital-options buy requests.
+        NEXT_PUBLIC_DERIV_APP_MARKUP_PERCENTAGE: JSON.stringify(process.env.NEXT_PUBLIC_DERIV_APP_MARKUP_PERCENTAGE ?? '3'),
         // Marks the static preview build (served under /bot/preview); drives the
         // router basename so React Router resolves under that path prefix.
         NEXT_PUBLIC_APP_BUILD: JSON.stringify(process.env.NEXT_PUBLIC_APP_BUILD ?? ''),

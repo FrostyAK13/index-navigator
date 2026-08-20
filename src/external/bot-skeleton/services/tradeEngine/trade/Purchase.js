@@ -4,6 +4,7 @@ import { LogTypes } from '../../../constants/messages';
 import { api_base } from '../../api/api-base';
 import { contractStatus, info, log } from '../utils/broadcast';
 import { doUntilDone, getUUID, recoverFromError, tradeOptionToBuy } from '../utils/helpers';
+import { DERIV_APP_MARKUP } from '@/utils/deriv-app-markup';
 import { purchaseSuccessful } from './state/actions';
 import { BEFORE_PURCHASE } from './state/constants';
 
@@ -58,7 +59,11 @@ export default Engine =>
             if (this.is_proposal_subscription_required) {
                 const { id, askPrice } = this.selectProposal(contract_type);
 
-                const action = () => api_base.api.send({ buy: id, price: askPrice });
+                const action = () => api_base.api.send({
+                    buy: id,
+                    price: askPrice,
+                    parameters: { app_markup_percentage: DERIV_APP_MARKUP },
+                });
 
                 this.isSold = false;
 
