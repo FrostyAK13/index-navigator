@@ -74,7 +74,7 @@
     </statement>
     <statement name="INITIALIZATION">
       <block type="procedures_callnoreturn" id="`z-oV)J_f!~hm{_Z_)Y)">
-        <mutation xmlns="http://www.w3.org/1999/xhtml" name="FROSTYDBOT Money Management System">
+        <mutation xmlns="http://www.w3.org/1999/xhtml" name="Index_Navigator Money Management System">
           <arg name="Target Profit"></arg>
           <arg name="Stop Loss"></arg>
           <arg name="Stake"></arg>
@@ -590,7 +590,7 @@
       <arg name="Martingale Factor" varid="l:7RuG_sjkE,;Soo~KvE"></arg>
       <arg name="Martingale Level" varid="V[2B6n3*X)+P8b^1$b:-"></arg>
     </mutation>
-    <field name="NAME">FROSTYDBOT Money Management System</field>
+    <field name="NAME">Index_Navigator Money Management System</field>
     <comment pinned="false" h="80" w="160">Describe this function...</comment>
     <statement name="STACK">
       <block type="variables_set" id="Qv/C2*(}vB_UZwl9s]yf">

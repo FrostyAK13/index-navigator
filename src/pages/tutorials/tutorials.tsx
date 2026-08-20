@@ -11,13 +11,13 @@ const TutorialsTab = () => {
                         <path d='M41 52.5V37.5L53 45L41 52.5Z' fill='#FF0000' />
                     </svg>
                 </div>
-                <h2 className='tutorials-youtube__title'>FROSTYDBOT Tutorials</h2>
+                <h2 className='tutorials-youtube__title'>Index_Navigator Tutorials</h2>
                 <p className='tutorials-youtube__description'>
-                    Learn how to use every tool on <strong>frostydbot.site</strong> — from building your first bot to
+                    Learn how to use every tool on <strong>indexnavigator.site</strong> — from building your first bot to
                     advanced strategy setups. New videos posted regularly.
                 </p>
                 <a
-                    href='http://www.youtube.com/@frostydbot'
+                    href='http://www.youtube.com/@index_navigator'
                     target='_blank'
                     rel='noopener noreferrer'
                     className='tutorials-youtube__button'

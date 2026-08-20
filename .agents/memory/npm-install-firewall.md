@@ -1,6 +1,6 @@
 ---
 name: npm install firewall fix
-description: Fresh npm install on this project (FROSTYDBOT / Deriv trading bot) can fail with a Package Firewall 405 fetching npm-10.9.8.tgz directly, even though it's a bundled transitive dependency.
+description: Fresh npm install on this project (Index_Navigator / Deriv trading bot) can fail with a Package Firewall 405 fetching npm-10.9.8.tgz directly, even though it's a bundled transitive dependency.
 ---
 
 `npm install` sometimes tries to fetch `npm@10.9.8` directly from the registry (via `@deriv-com/quill-ui` → `@deriv-com/quill-tokens` → `semantic-release`), which the Replit Package Firewall blocks with a 405, even though the lockfile correctly marks it as a `bundleDependencies` entry (bundled inside its parent tarball).

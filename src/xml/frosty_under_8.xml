@@ -237,7 +237,7 @@
                           <block type="text_statement" id="?XgaPo+8wAhV+}Zc*IV?" collapsed="true">
                             <value name="TEXT">
                               <shadow type="text" id="ct+4#w+CnZ-!FqvVoo?N">
-                                <field name="TEXT">FROSTYDBOT</field>
+                                <field name="TEXT">Index_Navigator</field>
                               </shadow>
                             </value>
                           </block>
@@ -426,7 +426,7 @@
                                       <block type="text_statement" id=".1ELxSoV0EhPS#O]5,ec" collapsed="true">
                                         <value name="TEXT">
                                           <shadow type="text" id="T}x6x2CmuMPt;U!9eq+{">
-                                            <field name="TEXT">FROSTYDBOT</field>
+                                            <field name="TEXT">Index_Navigator</field>
                                           </shadow>
                                         </value>
                                         <next>

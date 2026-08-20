@@ -4,8 +4,8 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "frostydbot.site" }],
-      "destination": "https://www.frostydbot.site/:path*",
+      "has": [{ "type": "host", "value": "www.indexnavigator.site" }],
+      "destination": "https://indexnavigator.site/:path*",
       "permanent": true
     }
   ],

@@ -1,11 +1,11 @@
 {
-    "brand_name": "FROSTYDBOT",
-    "brand_domain": "frostydbot.site",
+    "brand_name": "Index_Navigator",
+    "brand_domain": "indexnavigator.site",
     "brand_hostname": {
-        "staging": "staging.frostydbot.site",
-        "production": "www.frostydbot.site"
+        "staging": "staging.indexnavigator.site",
+        "production": "indexnavigator.site"
     },
-    "domain_name": "frostydbot.site",
+    "domain_name": "indexnavigator.site",
     "colors": {
         "primary": "#f7c53b",
         "secondary": "#64748b",
@@ -79,17 +79,17 @@
         "css_variable_prefix": "--brand"
     },
     "platform": {
-        "name": "FROSTYDBOT",
+        "name": "Index_Navigator",
         "footer": {
             "enable_language_settings": false,
             "enable_theme_toggle": true
         },
         "hostname": {
             "production": {
-                "com": "www.frostydbot.site"
+                "com": "indexnavigator.site"
             },
             "staging": {
-                "com": "staging.frostydbot.site"
+                "com": "staging.indexnavigator.site"
             }
         },
         "auth2_url": {

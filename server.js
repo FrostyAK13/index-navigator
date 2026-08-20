@@ -17,16 +17,8 @@ const server = http.createServer((req, res) => {
     return files.some(f => f.endsWith('.js') && !f.startsWith('async'));
   };
   
-  // For root path, try to serve index.html
+  // For root path, serve the built application.
   if (req.url === '/') {
-    // Check if the build is complete by looking for any JS bundle
-    if (!isBuildComplete()) {
-      // Build incomplete, serve loading page
-      const loadingPath = path.join(__dirname, 'loading.html');
-      res.writeHead(200, { 'Content-Type': 'text/html' });
-      res.end(fs.readFileSync(loadingPath));
-      return;
-    }
     filePath = path.join(__dirname, 'dist', 'index.html');
   }
   

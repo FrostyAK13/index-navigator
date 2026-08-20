@@ -2,10 +2,8 @@ import { lazy, Suspense } from 'react';
 import React from 'react';
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
 import { cleanupUrl, handleOAuthCallback } from '@/external/deriv-core';
-import EpicLoader from '@/components/loader/epic-loader';
 import LocalStorageSyncWrapper from '@/components/localStorage-sync-wrapper';
 import RoutePromptDialog from '@/components/route-prompt-dialog';
-import DevToolsGuard from '@/components/devtools-guard/devtools-guard';
 import { useAccountSwitching } from '@/hooks/useAccountSwitching';
 import { useLanguageFromURL } from '@/hooks/useLanguageFromURL';
 import { StoreProvider } from '@/hooks/useStore';
@@ -37,9 +35,7 @@ const router = createBrowserRouter(
         <Route
             path='/'
             element={
-                    <Suspense
-                    fallback={<EpicLoader />}
-                >
+                    <Suspense fallback={null}>
                     <TranslationProvider defaultLang='EN' i18nInstance={i18nInstance}>
                         <LanguageHandler>
                             <StoreProvider>
@@ -138,11 +134,7 @@ function App() {
         handleCallback();
     }, []);
 
-    return (
-        <DevToolsGuard>
-            <RouterProvider router={router} />
-        </DevToolsGuard>
-    );
+    return <RouterProvider router={router} />;
 }
 
 export default App;

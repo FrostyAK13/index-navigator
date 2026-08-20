@@ -912,7 +912,7 @@
             <field name="NOTIFICATION_SOUND">silent</field>
             <value name="MESSAGE">
               <shadow type="text" id="-J2`Ru+x5?aixepZy_gv">
-                <field name="TEXT">FROSTYDBOT</field>
+                <field name="TEXT">Index_Navigator</field>
               </shadow>
             </value>
             <next>

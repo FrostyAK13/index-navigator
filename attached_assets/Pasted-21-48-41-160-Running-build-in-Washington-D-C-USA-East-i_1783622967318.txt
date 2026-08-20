@@ -154,7 +154,7 @@
 21:49:08.412 ╰──────────────────────────────────────────────────────────────────────────────╯
 21:49:08.418 Done in 22.5s using pnpm v10.28.0
 21:49:08.658 
-21:49:08.658 > frostydbot@0.2.0 prebuild
+21:49:08.658 > index_navigator@0.2.0 prebuild
 21:49:08.658 > node scripts/generate-brand-css.js
 21:49:08.659 
 21:49:08.698 file:///vercel/path0/scripts/generate-brand-css.js:1
