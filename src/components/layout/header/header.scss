@@ -2,6 +2,20 @@
 @use 'components/shared/styles/mixins' as *;
 
 .app-header {
+    background: linear-gradient(110deg, rgb(55 35 18 / 94%) 0%, rgb(48 48 48 / 92%) 52%, rgb(63 43 22 / 94%) 100%) !important;
+    border: 1px solid rgb(255 255 255 / 24%);
+    border-radius: 1.8rem;
+    box-shadow: 0 1.2rem 3.2rem rgb(0 0 0 / 34%), inset 0 1px 0 rgb(255 255 255 / 12%);
+    backdrop-filter: blur(1.6rem);
+
+    .app-header__logo-text,
+    .app-header__account-settings,
+    .auth-actions,
+    .deriv-wrapper,
+    .app-header__menu {
+        color: #f4f4f2;
+    }
+
     &__account-settings {
         padding-inline-end: 1.2rem;
         border-inline-end: 0.1rem solid var(--general-section-1);
