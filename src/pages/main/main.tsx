@@ -37,7 +37,6 @@ import {
     LabelPairedPuzzlePieceTwoCaptionBoldIcon,
     LabelPairedCircleStarCaptionBoldIcon,
     LabelPairedMagnifyingGlassPlusCaptionRegularIcon,
-    LabelPairedCircleCaptionRegularIcon,
     LabelPairedCopyCaptionRegularIcon,
     LabelPairedArrowUpArrowDownCaptionBoldIcon,
 } from '@deriv/quill-icons/LabelPaired';
@@ -89,7 +88,7 @@ const AppWrapper = observer(() => {
     const { clear } = summary_card;
     const { DASHBOARD, BOT_BUILDER } = DBOT_TABS;
     const init_render = React.useRef(true);
-    const hash = ['dashboard', 'bot_builder', 'free_bots', 'over_under_engine', 'd_circles', 'chart', 'trading_view', 'copy_trading', 'analysis', 'tutorial'];
+    const hash = ['dashboard', 'bot_builder', 'free_bots', 'over_under_engine', 'chart', 'copy_trading', 'analysis', 'tutorial'];
     const { isDesktop } = useDevice();
     const location = useLocation();
     const navigate = useNavigate();
@@ -442,26 +441,6 @@ const AppWrapper = observer(() => {
                             <div
                                 label={
                                     <>
-                                        <LabelPairedCircleCaptionRegularIcon
-                                            height='24px'
-                                            width='24px'
-                                            fill='var(--text-general)'
-                                        />
-                                        <Localize i18n_default_text='D-Circles' />
-                                    </>
-                                }
-                                id='id-d-circles'
-                            >
-                                <iframe
-                                    src='https://frostydcircles.vercel.app/'
-                                    title='D-Circles'
-                                    style={{ width: '100%', height: '100%', border: 'none', display: 'block' }}
-                                    allow='clipboard-read; clipboard-write'
-                                />
-                            </div>
-                            <div
-                                label={
-                                    <>
                                         <LabelPairedChartLineCaptionRegularIcon
                                             height='24px'
                                             width='24px'
@@ -481,25 +460,6 @@ const AppWrapper = observer(() => {
                                 >
                                     <ChartWrapper show_digits_stats={false} />
                                 </Suspense>
-                            </div>
-                            <div
-                                label={
-                                    <>
-                                        <svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='var(--text-general)' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'>
-                                            <rect x='2' y='3' width='20' height='14' rx='2' />
-                                            <polyline points='8 21 12 17 16 21' />
-                                        </svg>
-                                        <Localize i18n_default_text='Trading View' />
-                                    </>
-                                }
-                                id='id-trading-view'
-                            >
-                                <iframe
-                                    src='https://charts.deriv.com/deriv'
-                                    title='Trading View'
-                                    style={{ width: '100%', height: '100%', border: 'none', display: 'block' }}
-                                    allow='clipboard-read; clipboard-write'
-                                />
                             </div>
                             <div
                                 label={

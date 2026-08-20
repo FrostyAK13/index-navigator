@@ -4,7 +4,6 @@ import Text from '@/components/shared_ui/text';
 import { DBOT_TABS } from '@/constants/bot-contents';
 import { useStore } from '@/hooks/useStore';
 import {
-    LabelPairedCircleStarMdRegularIcon,
     LabelPairedCloneMdRegularIcon,
     LabelPairedGraduationCapMdRegularIcon,
     LabelPairedPercentMdRegularIcon,
@@ -27,12 +26,6 @@ const FeatureShowcase = observer(() => {
 
     // Left column (3), right column (3), then the last one sits in the square slot.
     const features: TFeature[] = [
-        {
-            id: 'd-circles',
-            icon: <LabelPairedCircleStarMdRegularIcon />,
-            title: <Localize i18n_default_text='D-Circles' />,
-            tab: DBOT_TABS.D_CIRCLES,
-        },
         {
             id: 'free-bots',
             icon: <LabelPairedCloneMdRegularIcon />,
