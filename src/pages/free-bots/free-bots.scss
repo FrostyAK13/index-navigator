@@ -448,7 +448,7 @@
         }
 
         &--premium {
-            background: radial-gradient(ellipse at 50% 0%, #211600 0%, #130e00 55%, #080500 100%);
+            background: linear-gradient(135deg, #9d6c37 0%, #9d6c37 50%, #c89f5a 50%, #c89f5a 100%);
             border-color: transparent;
             animation: premium-pulse 3s ease-in-out infinite;
 
@@ -537,7 +537,7 @@
         }
 
         &--normal-tab {
-            background: radial-gradient(ellipse at 50% 0%, #001428 0%, #000d1f 55%, #000508 100%);
+            background: linear-gradient(135deg, #9d6c37 0%, #9d6c37 50%, #c1c4c2 50%, #c1c4c2 100%);
             border-color: transparent;
             animation: normal-pulse 3s ease-in-out infinite;
 
@@ -634,7 +634,7 @@
         }
 
         &--classics {
-            background: radial-gradient(ellipse at 50% 0%, #1a0f00 0%, #100900 55%, #060300 100%);
+            background: linear-gradient(135deg, #5f4221 0%, #5f4221 50%, #eace8d 50%, #eace8d 100%);
             border-color: transparent;
             animation: classics-pulse 3s ease-in-out infinite;
 
