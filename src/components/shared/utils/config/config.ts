@@ -8,6 +8,7 @@ import {
 } from '@/external/deriv-core';
 import type { AuthConfig } from '@/external/deriv-core';
 import { DerivWSAccountsService } from '@/services/derivws-accounts.service';
+import { getOAuthRedirectUri } from '@/utils/oauth-redirect-uri';
 import brandConfig from '../../../../../brand.config.json';
 
 // =============================================================================
@@ -114,7 +115,7 @@ export const generateOAuthURL = async (prompt?: string): Promise<string> => {
 
         const config: AuthConfig = {
             clientId,
-            redirectUri: window.location.origin,
+            redirectUri: getOAuthRedirectUri(),
             scopes: 'trade application_read',
         };
 

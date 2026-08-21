@@ -50,6 +50,7 @@ export default defineConfig({
         NEXT_PUBLIC_DERIV_APP_NAME: JSON.stringify(process.env.NEXT_PUBLIC_DERIV_APP_NAME ?? ''),
         // App markup applied to digital-options buy requests.
         NEXT_PUBLIC_DERIV_APP_MARKUP_PERCENTAGE: JSON.stringify(process.env.NEXT_PUBLIC_DERIV_APP_MARKUP_PERCENTAGE ?? '3'),
+        NEXT_PUBLIC_DERIV_REDIRECT_URI: JSON.stringify(process.env.NEXT_PUBLIC_DERIV_REDIRECT_URI ?? ''),
         // Marks the static preview build (served under /bot/preview); drives the
         // router basename so React Router resolves under that path prefix.
         NEXT_PUBLIC_APP_BUILD: JSON.stringify(process.env.NEXT_PUBLIC_APP_BUILD ?? ''),

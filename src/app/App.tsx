@@ -9,6 +9,7 @@ import { useLanguageFromURL } from '@/hooks/useLanguageFromURL';
 import { StoreProvider } from '@/hooks/useStore';
 import { isPreviewMode, PREVIEW_BASE_PATH } from '@/utils/is-preview-mode';
 import { localize, TranslationProvider } from '@deriv-com/translations';
+import { getOAuthRedirectUri } from '@/utils/oauth-redirect-uri';
 import CoreStoreProvider from './CoreStoreProvider';
 import i18nInstance from './i18n';
 import './app-root.scss';
@@ -86,13 +87,13 @@ function App() {
             window.alert(
                 `Login failed — Deriv returned an error:\n\n${oauthError}\n${oauthErrorDesc}\n\nCheck that your app's redirect URI is registered correctly in the Deriv developer dashboard.`
             );
-            cleanupUrl(window.location.origin);
+            cleanupUrl(getOAuthRedirectUri());
             return;
         }
 
         if (!urlParams.has('code')) return;
 
-        const redirectUri = window.location.origin;
+        const redirectUri = getOAuthRedirectUri();
         console.log('[OAuth] Handling callback. redirect_uri used:', redirectUri);
 
         const handleCallback = async () => {
@@ -127,7 +128,7 @@ function App() {
                 // Surface the error so it's visible in the UI, not just the console.
                 window.alert(`Login error: ${msg}\n\nOpen the browser console (F12) for details.`);
             } finally {
-                cleanupUrl(window.location.origin);
+                cleanupUrl(getOAuthRedirectUri());
             }
         };
 
